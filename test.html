@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<style type="text/css">
+		#shangxia {
+			position: absolute;
+			display: block;
+			margin-left: auto;
+			top: 70%;
+			right: 1%;
+			height: 100px;
+			width: 100px;
+			background: red
+		}
+		
+	</style>
+</head>
+
+<body style="height:2000px">
+	<div id="shangxia" style="top: 675.5px;">
+		<a href="#" target="_self">test</a>
+	</div>
+	<script type="text/javascript" src="./js/jquery-1.8.3.min.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function () {
+			var s = $('#shangxia').offset().top; 
+			$(window).scroll(function () { $("#shangxia").animate({ top: $(window).scrollTop() + s + "px" }, { queue: false, duration: 500 }); });
+			$body = (window.opera) ? (document.compatMode == "CSS1Compat" ? $('html') : $('body')) : $('html,body');
+    	});
+	</script>
+</body>
+
+</html>
